@@ -52,7 +52,7 @@ Tham khảo: https://toidicodedao.com/2018/09/11/su-khac-biet-giua-server-side-r
 - JSX cho phép viết các phần tử HTML bằng JavaScript và đặt chúng trong DOM mà không cần bất kỳ phương thức như createElement() hoặc appendChild().
 - Cú pháp JSX:
 ```
-const title = "BC19 - React"
+const title = "BC22 - React"
 const jsx = (
   <section className="app">
     <h1>{title}</h1>
@@ -62,7 +62,7 @@ const jsx = (
 
 - Code JSX nếu được viết bằng JS thuần
 ```
-const title = "BC19 - React";
+const title = "BC22 - React";
 const jsx = React.createElement("section", {
   className: "app"
 }, React.createElement("h1", null, title));
