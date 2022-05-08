@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+### Tổng quan
+- Angular, React, Vue là các thư viện và framework giúp xây dựng trang web theo hướng Single page application
+Tham khảo: https://toidicodedao.com/2018/09/11/su-khac-biet-giua-server-side-rendering-va-client-side-rendering
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### React:
+- https://reactjs.org/
+- Là một thư viện javascript dùng để xây dựng giao diện người dùng
+- VSCode extensions:
+  - https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets
+  - https://marketplace.visualstudio.com/items?itemName=riazxrazor.html-to-jsx
+- Browser extensions:
+  - https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en
 
-## Available Scripts
 
-In the project directory, you can run:
+### Create react app:
+- https://create-react-app.dev/
+- Câu lệnh: npx create-react-app <project-name>
+- CRA cung cấp bộ công cụ khởi tạo ứng dụng React, vì vậy bạn có thể đi vào xây dựng ứng dụng của mình mà không cần phải xử lý các cấu hình Webpack và Babel.
+  
+### Component:
+- Components giúp phân chia các UI (giao diện người dùng) thành các phần nhỏ để dễ dàng quản lý và tái sử dụng.
+- Về cơ bản, component cũng giống một javascript function return về những phần tử React mô tả những gì sẽ xuất hiện trên giao diện.
+- Luôn luôn bắt đầu component name với chữ cái in hoa React sẽ coi những component bắt đầu với chữ cái in thường là DOM tags. Ví dụ, `<div />` đại diện cho 1 thẻ div HTML, nhưng `<Welcome />` đại diện cho 1 component
+- Có 2 loại component
+  - Function component (nên sử dụng)
+  ```
+  function App() {
+    return (
+      <div>
+        Hello World!!!
+      </div>
+    );
+  }
+  ```
+  - Class component
+  ```
+  class App extends React.Component {
+    render() {
+      return (
+        <div>
+          Hello World!!!
+        </div>
+      );
+    }
+  }
+  ```
+  
+### JSX:
 
-### `npm start`
+- JSX = Javascript + XML
+- React sử dụng JSX để biểu thị UI components
+- JSX cho phép viết các phần tử HTML bằng JavaScript và đặt chúng trong DOM mà không cần bất kỳ phương thức như createElement() hoặc appendChild().
+- Cú pháp JSX:
+```
+const title = "BC19 - React"
+const jsx = (
+  <section className="app">
+    <h1>{title}</h1>
+  </section>
+)
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Code JSX nếu được viết bằng JS thuần
+```
+const title = "BC19 - React";
+const jsx = React.createElement("section", {
+  className: "app"
+}, React.createElement("h1", null, title));
+```
+- Vì JSX gần với JavaScript hơn là so với HTML, React sử dụng chuẩn quy tắc đặt tên camelCase cho thuộc tính thay vì dùng tên thuộc tính gốc của HTML.
+  - className thay cho class
+  - htmlFor thay cho for
+  - tabIndex thay cho tabindex
+  - ...
