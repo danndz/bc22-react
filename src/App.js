@@ -3,6 +3,10 @@ import FunctionComponent from "./1_Component/FunctionComponent";
 import ClassComponent from "./1_Component/ClassComponent";
 import Header from "./1_Component/Header";
 import Product from "./1_Component/Product";
+import DataBinding from "./2_DataBinding/DataBinding";
+import HandlingEvent from "./3_HandlingEvent/HandlingEvent";
+import Props from "./4_Props/Props";
+
 import Home from "./BT_HomePage/Home";
 import Layout from "./BT_Layout/Layout";
 
@@ -23,17 +27,17 @@ function App() {
     //   <Product />
     // </div>
 
-    // Bài tập 1: Dàn layout Home
+    // Lý thuyết
+    <>
+      {/* <DataBinding /> */}
+      {/* <HandlingEvent /> */}
+      <Props />
+    </>
+
+    // Bài tập:
     // <Home />
-    // Bài tập 2: Dàn layout Bootstrap
-    <Layout />
+    // <Layout />
   );
 }
 
 export default App;
-
-
-
-
-
-

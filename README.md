@@ -14,9 +14,9 @@ Tham khảo: https://toidicodedao.com/2018/09/11/su-khac-biet-giua-server-side-r
 
 ### Create react app:
 - https://create-react-app.dev/
-- Câu lệnh: npx create-react-app <project-name>
+- Câu lệnh: npx create-react-app `project-name`
 - CRA cung cấp bộ công cụ khởi tạo ứng dụng React, vì vậy bạn có thể đi vào xây dựng ứng dụng của mình mà không cần phải xử lý các cấu hình Webpack và Babel.
-  
+
 ### Component:
 - Components giúp phân chia các UI (giao diện người dùng) thành các phần nhỏ để dễ dàng quản lý và tái sử dụng.
 - Về cơ bản, component cũng giống một javascript function return về những phần tử React mô tả những gì sẽ xuất hiện trên giao diện.
@@ -44,7 +44,7 @@ Tham khảo: https://toidicodedao.com/2018/09/11/su-khac-biet-giua-server-side-r
     }
   }
   ```
-  
+
 ### JSX:
 
 - JSX = Javascript + XML
