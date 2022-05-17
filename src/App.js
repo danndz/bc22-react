@@ -6,6 +6,9 @@ import Product from "./1_Component/Product";
 import DataBinding from "./2_DataBinding/DataBinding";
 import HandlingEvent from "./3_HandlingEvent/HandlingEvent";
 import Props from "./4_Props/Props";
+import State from "./5_State/State";
+import ConditionalRendering from "./6_ConditionalRendering/ConditionalRendering";
+import Map from "./7_Map/Map";
 
 import Home from "./BT_HomePage/Home";
 import Layout from "./BT_Layout/Layout";
@@ -31,7 +34,10 @@ function App() {
     <>
       {/* <DataBinding /> */}
       {/* <HandlingEvent /> */}
-      <Props />
+      {/* <Props /> */}
+      {/* <State /> */}
+      {/* <ConditionalRendering /> */}
+      <Map />
     </>
 
     // Bài tập:

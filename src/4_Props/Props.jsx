@@ -10,6 +10,8 @@ export default function Props() {
     img: "https://image.oppo.com/content/dam/oppo/common/mkt/v2-2/find-x5-pro-en/navigation/findx5-pro-white-navigation-v2.png.thumb.webp",
   };
 
+  // funtion này chỉ được chạy khi component gọi tới prop onClick
+  // Đây là kĩ thuật để truyền dữ liệu từ component con lên component cha
   const handleClick = (value) => {
     alert(value);
   };
