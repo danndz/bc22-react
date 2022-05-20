@@ -72,3 +72,79 @@ const jsx = React.createElement("section", {
   - htmlFor thay cho for
   - tabIndex thay cho tabindex
   - ...
+
+### Props:
+
+- Props là viết tắt của Properties. Là một object được truyền vào trong một components, mỗi components sẽ nhận vào props và trả về react element.
+- Props cho phép chúng ta giao tiếp giữa các components với nhau bằng cách truyền tham số qua lại giữa các components.
+- Cách truyền một props cũng giống như cách mà bạn thêm một attributes cho một element HTML.
+- Không thể thay đổi dữ liệu của props .
+
+```
+// Truyền props cho component Welcome
+<Welcome name="Jack" age={18} />
+```
+```
+// Nhận giá trị của props trong class component bằng this.props
+import React, { Component } from "react";
+class Welcome extends Component {
+  render() {
+    console.log(this.props) //Giá trị của props
+    return (
+      <div>
+        <h1>Xin chào {this.props.name} !</h1>
+      </div>
+    );
+  }
+}
+export default Welcome;
+```
+```
+// Nhận props trong functional components bằng params
+import React from "react";
+const Welcome = (props) => {
+  console.log(props) //Giá trị của props
+  return (
+    <div>
+      <h1>Xin chào {props.name} !</h1>
+    </div>
+  );
+};
+export default Welcome;
+```
+- Khi components cha truyền cho component con một props thì components con chỉ có thể đọc và không có quyền chỉnh sửa nó
+- Mỗi khi dữ liệu trong props thay đổi thì component đó sẽ được render lại.
+
+
+### State
+
+- State là một object có thể được sử dụng để chứa dữ liệu hoặc thông tin về components. State có thể được thay đổi bất cứ khi nào mong muốn. Khác với props bạn có thể truyền props sang các components khác nhau thì state chỉ tồn tại trong phạm vi của components chứa nó, mỗi khi state thay đổi thì components đó sẽ được render lại.
+- Trong các dự án React, state được dùng để phản hồi các yêu cầu từ người dùng, hay lưu trữ một dữ liệu nào đó trong components.
+```
+// Tạo state trong constructor
+import React from "react";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    // Tạo state
+    this.state = {
+      message: "Cybersoft Academy"
+    };
+  }
+  render() {
+    return (
+      <div>
+        <h1>Hello {this.state.message}</h1>
+      </div>
+    );
+  }
+}
+export default App;
+```
+- Mỗi khi state thay đổi thì component sẽ được re-render.
+- Để cập nhật state ta không thay đổi trực tiếp state mà phải thông qua hàm this.setState
+- Lưu ý: setState là hàm bất đồng bộ, nếu cần lấy kết qua sau khi setState ta sẽ lấy trong tham số thứ 2 của hàm setState là 1 callback function
+```
+this.setState({message: 'Hello'}, () => { console.log(this.state.message) })
+```
