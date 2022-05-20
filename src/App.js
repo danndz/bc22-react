@@ -12,6 +12,8 @@ import Map from "./7_Map/Map";
 
 import Home from "./BT_HomePage/Home";
 import Layout from "./BT_Layout/Layout";
+import ShoesShop from "./BT_Props/ShoesShop";
+import PhoneShop from "./BT_Product/PhoneShop";
 
 // React component
 function App() {
@@ -30,19 +32,21 @@ function App() {
     //   <Product />
     // </div>
 
-    // Lý thuyết
     <>
+      {/* Lý thuyết */}
       {/* <DataBinding /> */}
       {/* <HandlingEvent /> */}
       {/* <Props /> */}
       {/* <State /> */}
       {/* <ConditionalRendering /> */}
-      <Map />
-    </>
+      {/* <Map /> */}
 
-    // Bài tập:
-    // <Home />
-    // <Layout />
+      {/* Bài tập */}
+      {/* <Home /> */}
+      {/* <Layout />  */}
+      {/* <ShoesShop /> */}
+      <PhoneShop />
+    </>
   );
 }
 
