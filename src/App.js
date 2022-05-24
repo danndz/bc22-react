@@ -14,6 +14,7 @@ import Home from "./BT_HomePage/Home";
 import Layout from "./BT_Layout/Layout";
 import ShoesShop from "./BT_Props/ShoesShop";
 import PhoneShop from "./BT_Product/PhoneShop";
+import UserManagement from "./BT_UserManagement/UserManagement";
 
 // React component
 function App() {
@@ -45,7 +46,8 @@ function App() {
       {/* <Home /> */}
       {/* <Layout />  */}
       {/* <ShoesShop /> */}
-      <PhoneShop />
+      {/* <PhoneShop /> */}
+      <UserManagement />
     </>
   );
 }
