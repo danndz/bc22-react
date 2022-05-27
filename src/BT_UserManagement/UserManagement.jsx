@@ -69,7 +69,7 @@ export default class UserManagement extends Component {
 
         {/* Khi prop key thay đổi giá trị, React sẽ huỷ và tạo mới lại component */}
         <UserForm
-          key={this.state.updatedUser.id}
+          // key={this.state.updatedUser.id}
           user={this.state.updatedUser}
           onSubmit={this.handleSubmit}
         />

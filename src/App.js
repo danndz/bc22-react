@@ -15,6 +15,8 @@ import Layout from "./BT_Layout/Layout";
 import ShoesShop from "./BT_Props/ShoesShop";
 import PhoneShop from "./BT_Product/PhoneShop";
 import UserManagement from "./BT_UserManagement/UserManagement";
+import Lifecycle from "./8_Lifecycle/Lifecycle";
+import UserManagementAPI from './BT_UserManagementAPI/UserManagement'
 
 // React component
 function App() {
@@ -41,13 +43,15 @@ function App() {
       {/* <State /> */}
       {/* <ConditionalRendering /> */}
       {/* <Map /> */}
+      {/* <Lifecycle /> */}
 
       {/* Bài tập */}
       {/* <Home /> */}
       {/* <Layout />  */}
       {/* <ShoesShop /> */}
       {/* <PhoneShop /> */}
-      <UserManagement />
+      {/* <UserManagement /> */}
+      <UserManagementAPI />
     </>
   );
 }

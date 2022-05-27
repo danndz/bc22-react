@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class UserForm extends Component {
   constructor(props) {
@@ -28,41 +29,27 @@ export default class UserForm extends Component {
     }));
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
-    const { user } = this.props;
 
-    if (user.id) {
-      // Cập nhật
-      this.props.onSubmit({ ...this.state.values, id: user.id }, "update");
-    } else {
-      // Thêm mới
-      // Gửi object values lên component cha để thêm vào danh sách users
-      const id = Math.floor(Math.random() * 100);
-      this.props.onSubmit({ ...this.state.values, id }, "add");
+    try {
+      // Call API thêm user
+      await axios({
+        url: "https://625a732843fda1299a17d4e6.mockapi.io/api/users",
+        data: this.state.values,
+        method: "POST",
+      });
+      // Thêm thành công, tuy nhiên hiện data chỉ được thay đổi ở phía server
+      // Để giao diện cập nhật ta cần phải thông báo cho component UserManagement gọi lại hàm fetchUsers để call API mới và cập nhật state bằng cách gọi tới prop onSubmitSuccess
+      this.props.onSubmitSuccess();
+    } catch (error) {
+      console.log(error);
     }
   };
 
-  // Khi props hoặc state của component thay đổi, hàm componentDidUpdate sẽ tự động được khởi chạy
-  componentDidUpdate(prevProps, prevState) {
-    // Kiểm tra nếu data của props user thay đổi => setState values bằng giá trị props mới
-    if (prevProps.user.id !== this.props.user.id) {
-      const { user } = this.props;
-      this.setState({
-        values: {
-          firstname: user.firstname,
-          lastname: user.lastname,
-          email: user.email,
-          address: user.address,
-          dateOfBirth: user.dateOfBirth,
-        },
-      });
-    }
-  }
-
   render() {
     const { values } = this.state;
-    const buttonText = this.props.user.id ? "Update" : "Add";
+    const buttonText = "Add";
 
     return (
       <form onSubmit={this.handleSubmit}>
