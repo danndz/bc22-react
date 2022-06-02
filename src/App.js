@@ -9,14 +9,15 @@ import Props from "./4_Props/Props";
 import State from "./5_State/State";
 import ConditionalRendering from "./6_ConditionalRendering/ConditionalRendering";
 import Map from "./7_Map/Map";
+import Lifecycle from "./8_Lifecycle/Lifecycle";
+import Refs from "./9_Refs/Refs";
 
 import Home from "./BT_HomePage/Home";
 import Layout from "./BT_Layout/Layout";
 import ShoesShop from "./BT_Props/ShoesShop";
 import PhoneShop from "./BT_Product/PhoneShop";
 import UserManagement from "./BT_UserManagement/UserManagement";
-import Lifecycle from "./8_Lifecycle/Lifecycle";
-import UserManagementAPI from './BT_UserManagementAPI/UserManagement'
+import UserManagementAPI from "./BT_UserManagementAPI/UserManagement";
 
 // React component
 function App() {
@@ -44,6 +45,7 @@ function App() {
       {/* <ConditionalRendering /> */}
       {/* <Map /> */}
       {/* <Lifecycle /> */}
+      {/* <Refs /> */}
 
       {/* Bài tập */}
       {/* <Home /> */}

@@ -24,6 +24,7 @@ export default class Lifecycle extends Component {
     this.state = {
       data: null, // state chứa data trả về từ API
       message: "",
+      count: 0,
     };
   }
 
@@ -68,6 +69,10 @@ export default class Lifecycle extends Component {
     this.setState({ message: "" });
   };
 
+  increase = () => {
+    this.setState((state) => ({ count: state.count + 1 }));
+  };
+
   // render là phương thức thứ hai tự động được khởi chạy khi component được khởi tạo
   // render dùng để return về jsx hiển thị ra giao diện
   render() {
@@ -85,6 +90,13 @@ export default class Lifecycle extends Component {
             </p>
           );
         })}
+
+        <h1>Count: {this.state.count}</h1>
+        <button onClick={this.increase}>Increase</button>
+
+        <br />
+        <br />
+        <br />
 
         <button className="btn btn-success" onClick={this.addMessage}>
           Add Message

@@ -31,25 +31,68 @@ export default class UserForm extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
+    const { userId } = this.props;
 
     try {
-      // Call API thêm user
-      await axios({
-        url: "https://625a732843fda1299a17d4e6.mockapi.io/api/users",
-        data: this.state.values,
-        method: "POST",
-      });
-      // Thêm thành công, tuy nhiên hiện data chỉ được thay đổi ở phía server
+      if (userId) {
+        // Call API cập nhật user
+        await axios({
+          url: `https://625a732843fda1299a17d4e6.mockapi.io/api/users/${userId}`,
+          data: this.state.values,
+          method: "PUT",
+        });
+      } else {
+        // Call API thêm user
+        await axios({
+          url: "https://625a732843fda1299a17d4e6.mockapi.io/api/users",
+          data: this.state.values,
+          method: "POST",
+        });
+      }
+      // Thêm/Cập nhật thành công, tuy nhiên hiện data chỉ được thay đổi ở phía server
       // Để giao diện cập nhật ta cần phải thông báo cho component UserManagement gọi lại hàm fetchUsers để call API mới và cập nhật state bằng cách gọi tới prop onSubmitSuccess
       this.props.onSubmitSuccess();
+      // Reset lại form
+      this.setState({
+        values: {
+          firstname: "",
+          lastname: "",
+          email: "",
+          address: "",
+          dateOfBirth: "",
+        },
+      });
     } catch (error) {
       console.log(error);
     }
   };
 
+  fetchUser = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://625a732843fda1299a17d4e6.mockapi.io/api/users/${this.props.userId}`
+      );
+      // Call API thành công
+      this.setState({
+        values: { ...data },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // Khi props hoặc state thay đổi, sau khi render, hàm componentDidUpdate sẽ tự động được thực thi
+  componentDidUpdate(prevProps, prevState) {
+    // Kiểm tra prop userId có value VÀ giá trị cũ và mới khác nhau
+    if (this.props.userId && prevProps.userId !== this.props.userId) {
+      // Gọi hàm fetchUser để call API và setState
+      this.fetchUser();
+    }
+  }
+
   render() {
     const { values } = this.state;
-    const buttonText = "Add";
+    const buttonText = this.props.userId ? "Update" : "Add";
 
     return (
       <form onSubmit={this.handleSubmit}>

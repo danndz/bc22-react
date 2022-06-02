@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-export default function UserList({ users, onDeleteSuccess }) {
+export default function UserList({ users, onSelect, onDeleteSuccess }) {
   const handleDelete = async (userId) => {
     // Gọi API xoá user bằng userId
     await axios({
@@ -37,7 +37,12 @@ export default function UserList({ users, onDeleteSuccess }) {
               <td>{user.address}</td>
               <td>{user.dateOfBirth}</td>
               <td>
-                <button className="btn btn-success mr-2">Update</button>
+                <button
+                  className="btn btn-success"
+                  onClick={() => onSelect(user.id)}
+                >
+                  Update
+                </button>
                 <button
                   className="btn btn-danger"
                   onClick={() => handleDelete(user.id)}
