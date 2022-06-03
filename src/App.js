@@ -11,6 +11,8 @@ import ConditionalRendering from "./6_ConditionalRendering/ConditionalRendering"
 import Map from "./7_Map/Map";
 import Lifecycle from "./8_Lifecycle/Lifecycle";
 import Refs from "./9_Refs/Refs";
+import UseState from "./10_Hooks/UseState";
+import UseEffect from "./10_Hooks/UseEffect";
 
 import Home from "./BT_HomePage/Home";
 import Layout from "./BT_Layout/Layout";
@@ -18,6 +20,7 @@ import ShoesShop from "./BT_Props/ShoesShop";
 import PhoneShop from "./BT_Product/PhoneShop";
 import UserManagement from "./BT_UserManagement/UserManagement";
 import UserManagementAPI from "./BT_UserManagementAPI/UserManagement";
+import UserManagementHooks from "./BT_UserManagementHooks/UserManagement";
 
 // React component
 function App() {
@@ -46,6 +49,8 @@ function App() {
       {/* <Map /> */}
       {/* <Lifecycle /> */}
       {/* <Refs /> */}
+      {/* <UseState /> */}
+      {/* <UseEffect /> */}
 
       {/* Bài tập */}
       {/* <Home /> */}
@@ -53,7 +58,8 @@ function App() {
       {/* <ShoesShop /> */}
       {/* <PhoneShop /> */}
       {/* <UserManagement /> */}
-      <UserManagementAPI />
+      {/* <UserManagementAPI /> */}
+      <UserManagementHooks />
     </>
   );
 }
