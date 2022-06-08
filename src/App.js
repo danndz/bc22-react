@@ -21,6 +21,8 @@ import PhoneShop from "./BT_Product/PhoneShop";
 import UserManagement from "./BT_UserManagement/UserManagement";
 import UserManagementAPI from "./BT_UserManagementAPI/UserManagement";
 import UserManagementHooks from "./BT_UserManagementHooks/UserManagement";
+import MovieTicket from "./BT_MovieTicket/MovieTicket";
+import Composition from "./11_Composition/Composition";
 
 // React component
 function App() {
@@ -51,6 +53,7 @@ function App() {
       {/* <Refs /> */}
       {/* <UseState /> */}
       {/* <UseEffect /> */}
+      <Composition />
 
       {/* Bài tập */}
       {/* <Home /> */}
@@ -59,7 +62,8 @@ function App() {
       {/* <PhoneShop /> */}
       {/* <UserManagement /> */}
       {/* <UserManagementAPI /> */}
-      <UserManagementHooks />
+      {/* <UserManagementHooks /> */}
+      {/* <MovieTicket /> */}
     </>
   );
 }
