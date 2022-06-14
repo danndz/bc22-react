@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import Card from "./Card";
 
 const Composition = () => {
   return (
@@ -33,6 +34,45 @@ const Composition = () => {
       <Button variant="secondary" className="w-100" disabled={true}>
         Secondary
       </Button>
+
+      <br />
+      <br />
+
+      {/* Cách 1 */}
+      {/* <Card image="https://picsum.photos/200/300" className="w-25">
+        <h1>Awesome Picture</h1>
+        <Button variant="primary">Details</Button>
+      </Card>
+      <Card
+        className="w-25"
+        header={<p className="text-primary">Phone</p>}
+        footer={<Button variant="success">Details</Button>}
+      >
+        <h1>Iphone 13 Promax</h1>
+        <p>Price: 3000000</p>
+      </Card> */}
+
+      {/* Cách 2 */}
+      <Card className="w-25">
+        <Card.Image src="https://picsum.photos/200/300" alt="picsum" />
+        <Card.Body>
+          <h1>Awesome Picture</h1>
+          <Button variant="primary">Details</Button>
+        </Card.Body>
+      </Card>
+
+      <Card className="w-25">
+        <Card.Header className="text-center">
+          <p className="text-primary">Phone</p>
+        </Card.Header>
+        <Card.Body>
+          <h1>Iphone 13 Promax</h1>
+          <p>Price: 3000000</p>
+        </Card.Body>
+        <Card.Footer>
+          <Button variant="success">Details</Button>
+        </Card.Footer>
+      </Card>
     </div>
   );
 };

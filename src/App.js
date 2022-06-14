@@ -23,6 +23,8 @@ import UserManagementAPI from "./BT_UserManagementAPI/UserManagement";
 import UserManagementHooks from "./BT_UserManagementHooks/UserManagement";
 import MovieTicket from "./BT_MovieTicket/MovieTicket";
 import Composition from "./11_Composition/Composition";
+import ReactBootstrap from "./12_ReactBootstrap/ReactBootstrap";
+import CustomHooks from "./13_CustomHooks/CustomHooks";
 
 // React component
 function App() {
@@ -53,7 +55,9 @@ function App() {
       {/* <Refs /> */}
       {/* <UseState /> */}
       {/* <UseEffect /> */}
-      <Composition />
+      {/* <Composition /> */}
+      {/* <ReactBootstrap /> */}
+      <CustomHooks />
 
       {/* Bài tập */}
       {/* <Home /> */}
