@@ -25,6 +25,7 @@ import MovieTicket from "./BT_MovieTicket/MovieTicket";
 import Composition from "./11_Composition/Composition";
 import ReactBootstrap from "./12_ReactBootstrap/ReactBootstrap";
 import CustomHooks from "./13_CustomHooks/CustomHooks";
+import Redux from "./14_Redux/Redux";
 
 // React component
 function App() {
@@ -57,7 +58,8 @@ function App() {
       {/* <UseEffect /> */}
       {/* <Composition /> */}
       {/* <ReactBootstrap /> */}
-      <CustomHooks />
+      {/* <CustomHooks /> */}
+      <Redux />
 
       {/* Bài tập */}
       {/* <Home /> */}

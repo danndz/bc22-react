@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import useCounter from "./useCounter";
 import useForm from "./useForm";
+import useRequest from "./useRequest";
 
 // Function component
 const CustomHooks = () => {
@@ -28,6 +30,33 @@ const CustomHooks = () => {
   const onError = () => {
     alert("Submit error");
   };
+
+  // const [data, setData] = useState(null); // State lưu trữ data từ API
+  // const [isLoading, setIsLoading] = useState(false); // State lưu trữ trạng thái loading khi call API
+  // const [error, setError] = useState(null); // State lưu trữ lỗi khi call API thất bại
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       setIsLoading(true); // set isLoading thành true trước khi call API
+  //       const { data } = await axios({
+  //         method: "GET",
+  //         url: "https://jsonplaceholder.typicode.com/todos",
+  //       });
+  //       setData(data); // set data là kết quả từ API trả về
+  //       setIsLoading(false); // set isLoading thành false khi call API thành công
+  //     } catch (error) {
+  //       setIsLoading(false); // set isLoading thành false khi call API thất bại
+  //       setError(error.resonse.data); // set error là lỗi từ API trả về
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
+  const { data, isLoading, error } = useRequest({
+    method: "GET",
+    url: "https://jsonplaceholder.typicode.com/todos",
+  });
 
   return (
     <div>
@@ -75,6 +104,17 @@ const CustomHooks = () => {
 
         <button className="btn btn-success">Submit</button>
       </form>
+
+      <br />
+      <br />
+
+      <ul>
+        {isLoading && <h1>Loading...</h1>}
+        {error && <h1>{error}</h1>}
+        {(data || []).map((item) => {
+          return <li key={item.id}>{item.title}</li>;
+        })}
+      </ul>
     </div>
   );
 };
