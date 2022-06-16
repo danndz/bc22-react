@@ -26,6 +26,7 @@ import Composition from "./11_Composition/Composition";
 import ReactBootstrap from "./12_ReactBootstrap/ReactBootstrap";
 import CustomHooks from "./13_CustomHooks/CustomHooks";
 import Redux from "./14_Redux/Redux";
+import TodoApp from "./BT_TodoApp/TodoApp";
 
 // React component
 function App() {
@@ -59,7 +60,7 @@ function App() {
       {/* <Composition /> */}
       {/* <ReactBootstrap /> */}
       {/* <CustomHooks /> */}
-      <Redux />
+      {/* <Redux /> */}
 
       {/* Bài tập */}
       {/* <Home /> */}
@@ -70,6 +71,7 @@ function App() {
       {/* <UserManagementAPI /> */}
       {/* <UserManagementHooks /> */}
       {/* <MovieTicket /> */}
+      <TodoApp />
     </>
   );
 }
