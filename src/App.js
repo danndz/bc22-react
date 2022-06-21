@@ -27,6 +27,7 @@ import ReactBootstrap from "./12_ReactBootstrap/ReactBootstrap";
 import CustomHooks from "./13_CustomHooks/CustomHooks";
 import Redux from "./14_Redux/Redux";
 import TodoApp from "./BT_TodoApp/TodoApp";
+import TodoAppAPI from "./BT_TodoAppAPI/TodoApp";
 
 // React component
 function App() {
@@ -71,7 +72,8 @@ function App() {
       {/* <UserManagementAPI /> */}
       {/* <UserManagementHooks /> */}
       {/* <MovieTicket /> */}
-      <TodoApp />
+      {/* <TodoApp /> */}
+      <TodoAppAPI />
     </>
   );
 }

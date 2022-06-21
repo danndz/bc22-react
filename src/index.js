@@ -6,7 +6,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 // import redux
 // createStore: là hàm dùng để khởi tạo một redux store
-import { createStore } from "redux";
+// applyMiddleware: là hàm dùng để gắn middleware vào redux
+// compose: là hàm dùng để kết hợp các function lại thành 1 function duy nhất, lý do sử dụng là vì hàm createStore chỉ nhận vào 2 tham số mà applyMiddleware sẽ được đưa vào tham số thứ 2 của hàm createStore => xung đột với redux devtool => dùng compose để gộp hàm applyMiddleware và redux devtool vào chung 1 function để truyền vào hàm createStore
+import { createStore, applyMiddleware, compose } from "redux";
+
+// import redux-thunk
+// thunk là một thư viện middleware của redux, cho phép viết các async actions
+import thunk from "redux-thunk";
 
 // import react-redux
 // Provider: là component dùng để kết nối redux và các component của react
@@ -22,11 +28,15 @@ import reportWebVitals from "./reportWebVitals";
 // - state: giá trị state hiện tại của store, ở lần đầu tiên ta cần khởi tạo giá trị mặc định cho state. state = { count: 0 }
 // - action: là một object có 1 key bắt buộc là type dùng để mô tả cho reducer biết là sẽ làm gì
 
+// Để sử dụng devtool chung với middleware
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 // Khởi tạo redux store
 const store = createStore(
   rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeEnhancers(applyMiddleware(thunk))
 );
+
 // Hàm getState dùng để truy cập state từ store
 console.log("state trước khi dispatch:", store.getState());
 // Hàm dispatch dùng để gửi 1 action lên store để thay đổi state
