@@ -1,0 +1,14 @@
+.title {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Sử dụng css module thì nên đặt tên class theo dạng camelCase */
+.titlePrimary {
+  color: #f00;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
